@@ -1,0 +1,46 @@
+### GENERAR REQUEST PARA OBTENER QR DE PRESENTACIÓN
+PUT https://sandbox-ssi.extrimian.com/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "did": "did",
+    "inputDescriptors": [
+        {
+            "id": "PopUpCityCredential",
+            "name": "PopUpCityCredential",
+            "constraints": {
+                "fields": [
+                    {
+                        "path": [
+                            "$.credentialSubject.category"
+                        ],
+                        "filter": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "issuer": {
+        "name": "Issuer Name",
+        "styles": {
+            "thumbnail": {
+                "uri": "https://dol.wa.com/logo.png",
+                "alt": "Issuer Name"
+            },
+            "hero": {
+                "uri": "https://dol.wa.com/alumnos.png",
+                "alt": "Image Description"
+            },
+            "background": {
+                "color": "#ff0000"
+            },
+            "text": {
+                "color": "#d4d400"
+            }
+        }
+    }
+}
+
+### Esto devuelve un objeto { invitationId: string, oobContentData: string}. El oobContentData debe usarse para renderizar el QR 

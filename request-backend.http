@@ -1,0 +1,22 @@
+### did:quarkid:EiDTOCf037Mjzy-wqs_FiUIykfOSZWJqU0l9j9N5mNTIeQ
+### did:quarkid:EiCgC1VVvGwFnBlueuuMQ3QEDu_V3t8fuNlaf-ei52XWcw
+### CREAR DID
+PUT http://localhost:3006/api-ssi/create-did HTTP/1.1
+Content-Type: application/json
+
+### OBTENER QR DE INVITACION PARA GENERAR UNA VC
+GET http://localhost:3006/api-ssi/presentation-qr?did=did:quarkid:EiBew9KyZIkIOsqF6JgBxwhdh63mdEccGbJTk7ifPCSjWg HTTP/1.1
+
+### OBTENER QR DE INVITACION PARA PRESENTACION
+GET http://localhost:3006/api-ssi/presentation-qr?did=did:quarkid:EiBew9KyZIkIOsqF6JgBxwhdh63mdEccGbJTk7ifPCSjWg HTTP/1.1
+
+### -> Escanear QR (obbContentData con wallet QuarkID)
+
+PUT http://localhost:3006/api-ssi/read-qr HTTP/1.1
+Content-Type: application/json
+
+{ 
+    "did": "did:quarkid:EiCXX8c-jCTTSASKfmmtK-RJnORpi8xaHQ0tJn68w-1lGg",
+    "message": "didcomm://?_oob=eyJ0eXBlIjoiaHR0cHM6Ly9kaWRjb21tLm9yZy9vdXQtb2YtYmFuZC8yLjAvaW52aXRhdGlvbiIsImlkIjoiNzM0NzQ1YjAtM2FjZS00MTYxLWFjY2YtNmE1YmI4OWQzZTE1IiwiZnJvbSI6ImRpZDpxdWFya2lkOkVpQmV3OUt5WklrSU9zcUY2SmdCeHdoZGg2M21kRWNjR2JKVGs3aWZQQ1NqV2ciLCJib2R5Ijp7ImdvYWxfY29kZSI6InN0cmVhbWxpbmVkLXZwIiwiYWNjZXB0IjpbImRpZGNvbW0vdjIiXX19"
+}
+
