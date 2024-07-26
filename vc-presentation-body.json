@@ -1,0 +1,40 @@
+{
+    "did": "did:quarkid:EiCgC1VVvGwFnBlueuuMQ3QEDu_V3t8fuNlaf-ei52XWcw",
+    "inputDescriptors": [
+        {
+            "id": "PopUpCityCredential",
+            "name": "PopUpCityCredential",
+            "constraints": {
+                "fields": [
+                    {
+                        "path": [
+                            "$.credentialSubject.category"
+                        ],
+                        "filter": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "issuer": {
+        "name": "Issuer Name",
+        "styles": {
+            "thumbnail": {
+                "uri": "https://dol.wa.com/logo.png",
+                "alt": "Issuer Name"
+            },
+            "hero": {
+                "uri": "https://dol.wa.com/alumnos.png",
+                "alt": "Image Description"
+            },
+            "background": {
+                "color": "#ff0000"
+            },
+            "text": {
+                "color": "#d4d400"
+            }
+        }
+    }
+}
